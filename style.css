@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    background-color: #0f172a;
+    color: #f8fafc;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.nav-bar {
+    /* position: sticky;
+    top: 0; */
+    display: flex;
+    align-items: center;
+    height: 70px;
+    padding: 10px 100px;
+    background-color: #1e293b;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.icons {
+    width: 40%;
+    font-size: 30px;
+    font-weight: 600;
+    display: flex;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.icons a {
+    color: white;
+    text-decoration: none;
+}
+
+.icons a:active {
+    color: lightcoral;
+}
+
+.menu-bar {
+    list-style: none;
+    display: flex;
+    width: 60%;
+    justify-content: space-around;
+}
+
+.menu-bar li {
+    font-size: 20px;
+}
+
+.menu-bar a {
+    text-decoration: none;
+    color: white;
+    transition: all 0.4s ease;
+}
+
+.menu-bar a:hover {
+    color: #f97316;
+    text-decoration: underline;
+    text-underline-offset: 7px;
+    text-decoration-color: #f97316;
+}
+
+.nav-bar-mini {
+    display: none;
+}
+
+.section1,.section2,.section3,.section4,.section6{
+    position: relative;
+}
+
+.arrow{
+    position: absolute;
+    height: 40px;
+    right: 50px;
+    bottom: 0px;
+    background-color: #12e15e;
+    border-radius: 40px;
+}
+
+.arrow img {
+    width: 40px;
+}
+
+.arrow2{
+    transform: rotate(180deg);
+    bottom: 50px;
+}
+
+@media(max-width:1024px) {
+    .arrow{
+        display: none;
+    }
+    .nav-bar {
+        display: none;
+    }
+
+    .nav-bar-mini {
+        display: flex;
+    }
+
+    .FontawesomeBar i {
+        font-size: 35px;
+        box-shadow: rgba(13, 246, 110, 0.25) 0px 50px 100px -20px, rgba(15, 236, 74, 0.3) 0px 30px 60px -30px, rgba(52, 236, 32, 0.35) 0px -2px 6px 0px inset;
+        position: fixed;
+        right: 30px;
+        top: 20px;
+        padding: 6px;
+        z-index: 999;
+    }
+
+    .nav-bar-mini .icons {
+        margin-top: 20px;
+        padding-left: 30px;
+    }
+
+    .nav-bar-mini .menu-bar {
+        display: flex;
+        flex-direction: column;
+        background-color: darkorange;
+        position: fixed;
+        right: 0;
+        top: 70px;
+        padding: 10px;
+        gap: 6px;
+        margin-right: -680px;
+        border-radius: 6px;
+        transition: all 0.5s ease;
+        z-index: 999;
+    }
+
+    .nav-bar-mini .menu-bar.show {
+        margin-right: 0px;
+    }
+
+    .nav-bar-mini .menu-bar li a {
+        display: block;
+        background-color: #0f172a;
+        border-radius: 4px;
+        padding: 4px;
+        font-weight: 500;
+    }
+}
+
+@media (max-width: 767px) {
+    .icons {
+        text-wrap: nowrap;
+    }
+
+    .nav-bar-mini .icons {
+        padding-left: 15px;
+        font-size: 20px;
+        margin-top: 25px;
+    }
+
+    .FontawesomeBar i {
+        font-size: 25px;
+        right: 25px;
+    }
+}

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hemanth Kumar - Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        .icons {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 10;
+        }
+
+        .hero {
+            height: 100vh;
+            background: url('https://m.media-amazon.com/images/M/MV5BNTBjZDIzZWYtY2M0MS00MTYzLWIwYzctYzY1ZjIwYWU1OTQ2XkEyXkFqcGc@._V1_QL75_UX817.5_.jpg') center/cover no-repeat;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            text-align: left;
+            padding-left: 5%;
+            position: relative;
+        }
+
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid white;
+            margin-top: -75px;
+            background-color: white;
+        }
+
+        .navbar .nav-link {
+            color: white !important;
+            font-weight: bold;
+            margin-right: 15px; /* Space between links */
+        }
+
+        .navbar {
+            background: transparent;
+            position: relative;
+            z-index: 5;
+        }
+
+        .container.navbar-container {
+            position: relative;
+            z-index: 5;
+            display: flex;
+            justify-content: center; /* Center links horizontally */
+        }
+
+        .navbar-nav {
+            display: flex;
+            gap: 20px; /* Creates space between the navbar items */
+        }
+
+        .navbar-container{
+            width: 100%;
+            display: flex;
+            justify-content: space-around; /* Center the navbar items */
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #ff4757 !important; /* Change color on hover */
+            text-decoration: underline; /* Underline on hover */
+        }
+
+        .btn-danger {
+            background-color: #ff4757;
+            border: none;
+        }
+
+            .profile-pic {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid white;
+    background-color: white;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+    z-index: 20;
+}
+
+        .profile-pic:hover {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section with Navbar inside -->
+    <div class="hero">
+        <!-- Social Icons -->
+        <div class="icons">
+            <a href="#" class="mx-2 text-white"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="mx-2 text-white"><i class="bi bi-twitter"></i></a>
+            <a href="#" class="mx-2 text-white"><i class="bi bi-google"></i></a>
+            <a href="#" class="mx-2 text-white"><i class="bi bi-github"></i></a>
+        </div>
+
+        <!-- Hero Content -->
+        <h2>Hello, I am</h2>
+        <h1 class="display-1 fw-bold">Hemanth Kumar.A</h1>
+        <h3>Software Engineer & Digital Marketer</h3>
+        <button class="btn btn-danger mt-3" onclick="window.print()">Print Resume</button>
+    </div>
+
+    <!-- Profile Image -->
+    <div class="text-center">
+        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Hemanth Kumar" class="profile-pic">
+    </div>
+
+      <!-- Navigation Bar -->
+      <nav class="navbar navbar-expand-lg position-absolute top-0 start-0 w-100">
+        <div class="navbar-container">
+            <div class="navbar-nav">
+                <a class="nav-link" href="#">Home</a>
+                <a class="nav-link" href="#">About</a>
+                <a class="nav-link" href="#">Resume</a>
+                <a class="nav-link" href="#">Portfolio</a>
+                <a class="nav-link" href="#">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Info Sections -->
+    <div class="container py-5">
+        <div class="row text-center">
+            <div class="col-md-6 mb-4">
+                <h2>Who am I?</h2>
+                <p>I am a passionate Software Engineer and Digital Marketer with a love for creating impactful digital experiences.</p>
+            </div>
+            <div class="col-md-6 mb-4">
+                <h2>My Expertise</h2>
+                <p>Web Development, Digital Marketing, SEO, UI/UX Design</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
