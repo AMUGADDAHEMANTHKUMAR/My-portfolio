@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hemanth Kumar | Welcome</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html, body {
+      height: 100%;
+      font-family: 'Outfit', sans-serif;
+      background-color: #0f172a;
+      overflow: hidden;
+    }
+
+    /* Preloader */
+    #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: #0f172a;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 10000;
+      animation: fadeOut 1s ease 2.8s forwards;
+    }
+
+    .preloader-logo {
+      font-size: 2.5rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: transparent;
+      background: linear-gradient(90deg, #f97316, #38bdf8, #a855f7);
+      background-clip: text;
+      -webkit-background-clip: text;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid rgba(255, 255, 255, 0.5);
+      width: 0;
+      animation: typing 2.5s steps(30, end) 0.3s forwards, blink 0.6s step-end infinite;
+    }
+
+    @keyframes typing {
+      to {
+        width: 100%;
+      }
+    }
+    @keyframes blink {
+      0%, 100% { border-color: transparent; }
+      50% { border-color: rgba(255, 255, 255, 0.5); }
+    }
+    @keyframes fadeOut {
+      to {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+
+    .main-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #0f172a;
+      color: white;
+      text-align: center;
+      opacity: 0;
+      animation: fadeInMain 1s ease 3s forwards;
+    }
+
+    @keyframes fadeInMain {
+      to { opacity: 1; }
+    }
+
+    .main-content h1 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+      color: #f97316;
+    }
+
+    .main-content p {
+      font-size: 1.2rem;
+      color: #e2e8f0;
+    }
+
+    .btn {
+      margin-top: 30px;
+      background: linear-gradient(to right, #38bdf8, #a855f7);
+      color: white;
+      border: none;
+      padding: 12px 26px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .btn:hover {
+      background: linear-gradient(to right, #a855f7, #38bdf8);
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="preloader-logo">Amugadda Hemanth Kumar | Portfolio Loading..................</div>
+  </div>
+
+  <!-- Welcome Screen -->
+  <div class="main-content">
+    <h1>Welcome to My Digital Space</h1>
+    <p>Crafted with precision, built with vision</p>
+    <button class="btn" id="exploreBtn">Explore Portfolio</button>
+  </div>
+
+  <script>
+    // Fade out on click, then redirect
+    const exploreBtn = document.getElementById('exploreBtn');
+    exploreBtn.addEventListener('click', () => {
+      document.body.style.transition = 'opacity 0.6s ease';
+      document.body.style.opacity = '0';
+
+      setTimeout(() => {
+        window.location.href = 'portfolio.html';
+      }, 600); // matches transition time
+    });
+  </script>
+</body>
+</html>
