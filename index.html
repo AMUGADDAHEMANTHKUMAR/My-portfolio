@@ -53,10 +53,12 @@
         width: 100%;
       }
     }
+
     @keyframes blink {
       0%, 100% { border-color: transparent; }
       50% { border-color: rgba(255, 255, 255, 0.5); }
     }
+
     @keyframes fadeOut {
       to {
         opacity: 0;
@@ -116,7 +118,7 @@
 
   <!-- Preloader -->
   <div id="preloader">
-    <div class="preloader-logo">Amugadda Hemanth Kumar | Portfolio Loading..................</div>
+    <div class="preloader-logo" id="preloaderText">Loading...</div>
   </div>
 
   <!-- Welcome Screen -->
@@ -127,16 +129,27 @@
   </div>
 
   <script>
-    // Fade out on click, then redirect
+    // 1. Update preloader text responsively
+    const preloaderText = document.getElementById('preloaderText');
+    const screenWidth = window.innerWidth;
+    if (screenWidth <= 480) {
+      preloaderText.textContent = 'Hemanth | Portfolio ....';
+    } else if (screenWidth <= 768) {
+      preloaderText.textContent = 'Hemanth Kumar | Portfolio ....';
+    } else {
+      preloaderText.textContent = 'Amugadda Hemanth Kumar | Portfolio Loading...';
+    }
+
+    // 2. Smooth fade transition before redirecting
     const exploreBtn = document.getElementById('exploreBtn');
     exploreBtn.addEventListener('click', () => {
       document.body.style.transition = 'opacity 0.6s ease';
       document.body.style.opacity = '0';
-
       setTimeout(() => {
         window.location.href = 'portfolio.html';
-      }, 600); // matches transition time
+      }, 600);
     });
   </script>
+
 </body>
 </html>
