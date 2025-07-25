@@ -165,7 +165,8 @@
     }
 
     .box3 img {
-        width: 200px;
+        width: 250px;
+        height: auto;
     }
 
     .box3-2 span {
