@@ -118,6 +118,7 @@
 .box3-2 span {
     font-size: 22px;
     font-weight: 500;
+    padding: 10px;
 }
 
 @media(max-width:1024px) {
