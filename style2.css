@@ -158,6 +158,10 @@
     margin: 20px 0;
   }
 
+  .pare  p {
+        text-align: center;
+    }
+
   .pare strong {
     color: #fff;
   }
