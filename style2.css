@@ -150,25 +150,4 @@
         flex-direction: column;
         margin-top: 50px;
     }
-
-    .pare {
-        font-size: 15.5px;
-        line-height: 1.7;
-        padding: 10px 20px;
-        text-align: justify;
-        word-spacing: 0.5px;
-        letter-spacing: 0.3px;
-        color: #ccc;
-        margin: 20px 0;
-    }
-
-    .pare p {
-        text-align: justify;
-        /* changed from center to justify */
-    }
-
-    .pare strong {
-        color: #fff;
-        font-weight: 600;
-    }
 }
