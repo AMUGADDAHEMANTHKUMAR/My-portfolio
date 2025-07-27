@@ -151,25 +151,19 @@
         margin-top: 50px;
     }
 
+
     .para {
-        padding: 10px 15px;
-        margin: 20px auto 0 auto;
-        font-size: 15px;
-        line-height: 1.7;
+        padding: 15px 20px;
+        margin: 20px auto;
+        font-size: 16px;
+        line-height: 1.8;
         text-align: justify;
-        color: #eee;
+        color: #dcdcdc;
+        font-family: 'Poppins', sans-serif;
         max-width: 95%;
     }
 
-    .para p {
-        font-size: 16px;
-        line-height: 1.7;
-        padding: 0 20px;
-        text-align: justify;
-        word-spacing: 1px;
-    }
-
     .para strong {
-        color: #fff;
+        color: #ffffff;
     }
 }
