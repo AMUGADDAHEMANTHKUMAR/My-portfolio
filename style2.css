@@ -161,6 +161,14 @@
         max-width: 95%;
     }
 
+    .para p {
+        font-size: 16px;
+        line-height: 1.7;
+        padding: 0 20px;
+        text-align: justify;
+        word-spacing: 1px;
+    }
+
     .para strong {
         color: #fff;
     }
