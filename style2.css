@@ -139,7 +139,7 @@
 }
 
 
-@media(max-width:767px) {
+@media(max-width: 767px) {
     .about-box:hover {
         box-shadow: none;
         transform: none;
