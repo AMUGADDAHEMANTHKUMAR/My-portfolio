@@ -156,13 +156,13 @@
     }
 
     .para p {
-        padding: 0px 20px;
         margin: 20px auto;
         font-size: 16px;
         line-height: 1.7;
         text-align: justify;
         color: #dcdcdc;
         font-family: 'Poppins', sans-serif;
+        width: 100%;
         word-spacing: 1px;
     }
 
