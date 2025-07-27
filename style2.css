@@ -148,4 +148,17 @@
         flex-direction: column;
         margin-top: 50px;
     }
+  .para {
+    font-size: 16px;
+    line-height: 1.8;
+    padding: 0 20px;
+    text-align: justify;
+    word-spacing: 1px;
+    color: #ccc;
+    margin: 20px 0;
+  }
+
+  .para strong {
+    color: #fff;
+  }
 }
