@@ -253,6 +253,26 @@
         ;
     }
 
+    .aboutsec p {
+    font-size: 16px;
+    line-height: 1.7;
+    padding: 0 20px;
+    text-align: justify;
+    word-spacing: 1px;
+}
+
+.aboutsec h1 {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+.span1, .span2 {
+    text-align: center;
+    display: block;
+}
+
+
 }
 
 /* @media (width: 820px) {
