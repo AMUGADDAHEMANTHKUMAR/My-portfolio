@@ -151,16 +151,20 @@
         margin-top: 50px;
     }
 
+    p {
+        text-align: center;
+    }
 
     .para p {
-        padding: 15px 20px;
+        padding: 0px 20px;
         margin: 20px auto;
         font-size: 16px;
-        line-height: 1.8;
+        line-height: 1.7;
         text-align: justify;
         color: #dcdcdc;
         font-family: 'Poppins', sans-serif;
         max-width: 95%;
+        word-spacing: 1px;
     }
 
 
