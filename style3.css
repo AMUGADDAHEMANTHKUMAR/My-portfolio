@@ -1,12 +1,10 @@
 .section3 {
-    padding: 50px 30px;
+    padding: 89px 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
     height: auto;
     gap: 60px;
-    
-    /* padding-top: 100px; */
 }
 
 .inner-link {
@@ -63,12 +61,12 @@
 }
 
 .sec3-2 {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 40px;
-  width: 100%;
-  padding-bottom: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    width: 100%;
+    padding-bottom: 50px;
 }
 
 
@@ -127,16 +125,61 @@
 }
 
 .Button a {
-  padding: 6px 12px;
-  background-color: #f97316;
-  color: white;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: 600;
-  margin: 5px;
+    padding: 6px 12px;
+    background-color: #f97316;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    margin: 5px;
 }
 
+/* Initial state before animation */
+.section3 .sec3-1,
+.section3 .sec3-2 {
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Animate when scrolled into view */
+.section3.animate .sec3-1,
+.section3.animate .sec3-2 {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+@keyframes slideFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Initial state */
+.section3 .sec3-1,
+.section3 .sec3-2 {
+    opacity: 0;
+}
+
+/* Animation trigger */
+.section3.animate .sec3-1,
+.section3.animate .sec3-2 {
+    animation: slideFadeIn 0.8s ease forwards;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+
 @media(max-width:1024px) {
+
     /* .box3:hover {
         box-shadow: none;
         transform: none;
@@ -165,13 +208,14 @@
         font-size: 30px;
         font-weight: 600;
     } */
-       .box3 {
-    width: 45%;
-  }
+    .box3 {
+        width: 45%;
+    }
 }
 
 
 @media(max-width:767px) {
+
     /* .box3:hover {
         box-shadow: none;
         transform: none;
@@ -191,15 +235,15 @@
     .box3-2 span {
         font-size: 15px;
     } */
-       .box3 {
-    width: 100%;
-  }
+    .box3 {
+        width: 100%;
+    }
 
-  .sec3-1 h1 {
-    font-size: 36px;
-  }
+    .sec3-1 h1 {
+        font-size: 36px;
+    }
 
-  .box3-2 span {
-    font-size: 16px;
-  }
+    .box3-2 span {
+        font-size: 16px;
+    }
 }

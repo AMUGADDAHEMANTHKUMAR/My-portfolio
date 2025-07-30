@@ -5,7 +5,7 @@
     align-items: center;
     display: flex;
     flex-direction: column;
-    padding-top: 40px;
+    padding-top: 60px;
     justify-content: end;
     padding-bottom: 0%;
 }
@@ -101,6 +101,27 @@
 .pare strong {
     color: #fff;
 }
+
+/* Animation base styles */
+.section2 .AboutMe-1,
+.section2 .AboutMe-2 {
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Triggered when visible */
+.section2.animate .AboutMe-1,
+.section2.animate .AboutMe-2 {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+body {
+  overflow-x: hidden;
+}
+
+
 
 @media screen and (max-width: 960px) {
     .about-box:hover {
