@@ -7,6 +7,6 @@
         obs.unobserve(entry.target); // Animate only once
       }
     });
-  }, { threshold: 0.9 });
+  }, { threshold: 0.3 });
 
   observer2.observe(section2);

@@ -10,7 +10,7 @@
         observer.unobserve(entry.target); // Trigger only once
       }
     });
-  }, { threshold: 0.9 });
+  }, { threshold: 0.3 });
 
   observer.observe(section);
 
