@@ -382,7 +382,7 @@
     Your browser does not support the audio element.
   </audio>
 
-  <script>
+  <!-- <script>
     const audio = document.getElementById('bgMusic');
     const musicBtn = document.getElementById('musicBtn');
     const quoteBox = document.getElementById('quoteBox');
@@ -421,7 +421,51 @@
         window.location.href = 'portfolio.html'; // Replace with your actual destination
       }, 1000);
     }
-  </script>
+  </script> -->
+
+  <script>
+  const audio = document.getElementById('bgMusic');
+  const musicBtn = document.getElementById('musicBtn');
+  const quoteBox = document.getElementById('quoteBox');
+  const screen = document.getElementById('screen');
+
+  const quotes = [
+    "“The universe is not only stranger than we imagine, it is stranger than we can imagine.” – Haldane",
+    "“Somewhere, something incredible is waiting to be known.” – Carl Sagan",
+    "“Imagination will often carry us to worlds that never were.” – Carl Sagan",
+    "“There are no rules of architecture for a castle in the clouds.” – G.K. Chesterton"
+  ];
+
+  let quoteIndex = 0;
+
+  function rotateQuotes() {
+    quoteBox.textContent = quotes[quoteIndex];
+    quoteIndex = (quoteIndex + 1) % quotes.length;
+  }
+
+  setInterval(rotateQuotes, 4000);
+  rotateQuotes();
+
+  // Toggle music on music button click only
+  musicBtn.addEventListener('click', function (e) {
+    e.stopPropagation(); // Prevent click from triggering enterUniverse
+    if (audio.paused) {
+      audio.play();
+      musicBtn.textContent = '🔊';
+    } else {
+      audio.pause();
+      musicBtn.textContent = '🔇';
+    }
+  });
+
+  // Clicking anywhere else on the screen redirects to portfolio
+  screen.addEventListener('click', function () {
+    screen.classList.add('exit');
+    setTimeout(() => {
+      window.location.href = 'portfolio.html'; // Replace with your actual destination
+    }, 1000);
+  });
+</script>
 
 </body>
 </html>
