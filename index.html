@@ -157,110 +157,180 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Hemanth Kumar Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Parallel Universe</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    html, body {
+    * {
       margin: 0;
-      padding: 0; 
-      overflow: hidden;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
       height: 100%;
-      background: #000;
+      background: radial-gradient(ellipse at center, #050014 0%, #000010 100%);
       font-family: 'Orbitron', sans-serif;
+      overflow: hidden;
+      cursor: pointer;
+      color: #00f0ff;
     }
 
-    body {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-    }
-
-    /* Animated background glow layers */
-    .bg-glow {
+    .stars {
       position: absolute;
-      width: 200%;
-      height: 200%;
-      top: -50%;
-      left: -50%;
-      background: radial-gradient(circle at center, #0ff, #00f, #f0f);
-      filter: blur(160px);
-      animation: rotateBG 40s linear infinite;
-      opacity: 0.2;
+      width: 100%;
+      height: 100%;
       z-index: 0;
     }
 
-    @keyframes rotateBG {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
+    .stars::after {
+      content: "";
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      box-shadow: 
+        10vw 20vh white, 30vw 60vh white, 60vw 40vh white, 90vw 70vh white,
+        80vw 20vh white, 50vw 80vh white, 70vw 30vh white, 40vw 50vh white;
+      animation: blink 2s infinite alternate ease-in-out;
+    }
+
+    @keyframes blink {
+      0% { opacity: 0.5; }
+      100% { opacity: 1; }
     }
 
     .container {
+      position: relative;
       z-index: 2;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
-      color: #fff;
       animation: fadeIn 2s ease-out;
     }
 
-    @keyframes fadeIn {
-      0% { opacity: 0; transform: scale(0.5); }
-      100% { opacity: 1; transform: scale(1); }
+    .circle-wrapper {
+      position: relative;
+      width: 140px;
+      height: 140px;
     }
 
-    .glitch-text {
-      font-size: 4.5rem;
-      color: #0ff;
-      animation: glitch 2s infinite;
-      text-shadow: 0 0 5px #0ff, 0 0 15px #00f, 0 0 30px #f0f;
+    .circle-center {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: radial-gradient(circle, #1f1f5c 0%, #0ff 100%);
+      box-shadow: 0 0 20px #0ff, 0 0 40px #00f;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: pulse 3s infinite;
     }
 
-    @keyframes glitch {
-      0%, 100% { transform: translate(0); }
-      20% { transform: translate(-3px, 3px); }
-      40% { transform: translate(3px, -3px); }
-      60% { transform: translate(-3px, -3px); }
-      80% { transform: translate(3px, 3px); }
+    .star-icon {
+      width: 30px;
+      height: 30px;
+      background: #0ff;
+      clip-path: polygon(50% 0%, 65% 35%, 100% 50%, 65% 65%, 50% 100%, 35% 65%, 0% 50%, 35% 35%);
+      filter: drop-shadow(0 0 5px #0ff);
     }
 
-    .enter-button {
-      margin-top: 40px;
-      padding: 18px 40px;
-      font-size: 1.2rem;
-      border: none;
-      background: linear-gradient(135deg, #0ff, #00f);
-      color: black;
-      border-radius: 12px;
-      cursor: pointer;
-      box-shadow: 0 0 15px #0ff, 0 0 30px #00f;
-      transition: all 0.3s ease;
-    }
-
-    .enter-button:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 30px #0ff, 0 0 60px #00f;
-    }
-
-    .music-control {
+    .circle-ring {
       position: absolute;
-      bottom: 10px;
+      border: 1px solid #0ff3;
+      border-radius: 50%;
+      animation: rotate 30s linear infinite;
+    }
+
+    .circle-ring:nth-child(2) {
+      top: -20px; left: -20px;
+      width: 180px; height: 180px;
+    }
+
+    .circle-ring:nth-child(3) {
+      top: -40px; left: -40px;
+      width: 220px; height: 220px;
+      animation-duration: 45s;
+    }
+
+    @keyframes rotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+
+    .title {
+      margin-top: 30px;
+      font-size: 2.5rem;
+      color: #aaf3ff;
+      text-shadow: 0 0 10px #0ff, 0 0 20px #00f;
+    }
+
+    .subtitle {
+      font-size: 1rem;
+      color: #71f5ff;
+      margin-top: 10px;
+    }
+
+    .tagline {
+      font-size: 0.85rem;
+      color: #999;
+      margin-top: 20px;
+      opacity: 0.6;
+    }
+
+    .bottom-note {
+      margin-top: 40px;
+      font-size: 0.75rem;
+      color: #00ffff88;
+    }
+
+    .quote-box {
+      margin-top: 30px;
+      font-size: 0.9rem;
+      max-width: 300px;
+      color: #66f0ff;
+      animation: fadeQuote 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes fadeQuote {
+      from { opacity: 0.4; }
+      to { opacity: 1; }
+    }
+
+    .music-toggle {
+      position: absolute;
+      bottom: 20px;
       right: 20px;
       background: #111;
-      padding: 12px 16px;
+      padding: 10px 14px;
       border-radius: 50px;
       font-size: 20px;
-      color: #0ff;
+      color: #00f0ff;
       cursor: pointer;
-      z-index: 3;
-      box-shadow: 0 0 10px #0ff;
+      z-index: 5;
+      box-shadow: 0 0 10px #00f0ff;
       transition: background 0.3s;
     }
 
-    .music-control:hover {
-      background: #0ff;
+    .music-toggle:hover {
+      background: #00f0ff;
       color: #000;
     }
 
-    /* Exit animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
     .exit {
       animation: exitAnim 1s forwards;
     }
@@ -268,56 +338,90 @@
     @keyframes exitAnim {
       to {
         opacity: 0;
-        transform: scale(5);
+        transform: scale(2);
+      }
+    }
+
+    @media (max-width: 500px) {
+      .title {
+        font-size: 2rem;
+      }
+      .music-toggle {
+        bottom: 10px;
+        right: 10px;
+        font-size: 16px;
+        padding: 8px 12px;
       }
     }
   </style>
 </head>
-<body>
+<body onclick="enterUniverse()" ontouchstart="enterUniverse()">
 
-  <div class="bg-glow"></div>
+  <div class="stars"></div>
 
-  <div class="container" id="mainContainer">
-    <div class="glitch-text">Welcome to My Galaxy</div>
-    <button class="enter-button" onclick="enterPortfolio()">🌠 Enter Portfolio</button>
+  <div class="container" id="screen">
+    <div class="circle-wrapper">
+      <div class="circle-ring"></div>
+      <div class="circle-ring"></div>
+      <div class="circle-center">
+        <div class="star-icon"></div>
+      </div>
+    </div>
+
+    <div class="title">Reality is overrated.</div>
+    <div class="subtitle">Click anywhere to enter the Parallel Universe</div>
+    <div class="tagline">✦ Your journey beyond the screen awaits ✦</div>
+    <div class="quote-box" id="quoteBox" aria-live="polite"></div>
+    <div class="bottom-note">Click anywhere to continue ⬇</div>
   </div>
 
-  <div class="music-control" onclick="toggleMusic()">🔊</div>
-  <audio id="bgMusic" loop>
+  <div class="music-toggle" id="musicBtn" onclick="toggleMusic(event)" aria-label="Toggle music">🔊</div>
+
+  <audio id="bgMusic" autoplay loop>
     <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
   </audio>
 
   <script>
-  // Music control
-  const audio = document.getElementById('bgMusic');
-  const musicBtn = document.querySelector('.music-control');
+    const audio = document.getElementById('bgMusic');
+    const musicBtn = document.getElementById('musicBtn');
+    const quoteBox = document.getElementById('quoteBox');
+    const quotes = [
+      "“The universe is not only stranger than we imagine, it is stranger than we can imagine.” – Haldane",
+      "“Somewhere, something incredible is waiting to be known.” – Carl Sagan",
+      "“Imagination will often carry us to worlds that never were.” – Carl Sagan",
+      "“There are no rules of architecture for a castle in the clouds.” – G.K. Chesterton"
+    ];
 
-  // Ensure music is off when page loads
-  window.addEventListener('DOMContentLoaded', () => {
-    audio.pause(); // Ensure it's not playing
-    musicBtn.textContent = '🔇'; // Show muted icon
-  });
+    let quoteIndex = 0;
 
-  function toggleMusic() {
-    if (audio.paused) {
-      audio.play();
-      musicBtn.textContent = '🔊';
-    } else {
-      audio.pause();
-      musicBtn.textContent = '🔇';
+    function rotateQuotes() {
+      quoteBox.textContent = quotes[quoteIndex];
+      quoteIndex = (quoteIndex + 1) % quotes.length;
     }
-  }
 
-  // Page transition
-  function enterPortfolio() {
-    const main = document.getElementById('mainContainer');
-    main.classList.add('exit');
-    setTimeout(() => {
-      window.location.href = 'portfolio.html';
-    }, 1000);
-  }
-</script>
+    setInterval(rotateQuotes, 4000);
+    rotateQuotes();
+
+    function toggleMusic(e) {
+      e.stopPropagation();
+      if (audio.paused) {
+        audio.play();
+        musicBtn.textContent = '🔊';
+      } else {
+        audio.pause();
+        musicBtn.textContent = '🔇';
+      }
+    }
+
+    function enterUniverse() {
+      const screen = document.getElementById('screen');
+      screen.classList.add('exit');
+      setTimeout(() => {
+        window.location.href = 'portfolio.html'; // Replace with your actual destination
+      }, 1000);
+    }
+  </script>
 
 </body>
 </html>
-
